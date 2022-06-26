@@ -16,7 +16,7 @@ export const Shop = () => {
 
 
   return (
-    <div style={{ textAlign: 'center'}}>
+    <section style={{ textAlign: 'center'}}>
 
       <p className='display-3 m-5'> Shop </p>
 
@@ -28,6 +28,6 @@ export const Shop = () => {
       }}>
         { products?.map((product, idx) => (<Product product={product} key={idx} />)) }
       </div>
-    </div>
+    </section>
   )
 }

@@ -2,8 +2,8 @@
 
 export const Home = () => {
   return (
-    <div>
+    <section>
         <p className='display-3 text-center m-5'> HOME </p>
-    </div>
+    </section>
   )
 }

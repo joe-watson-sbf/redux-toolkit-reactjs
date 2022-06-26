@@ -1,5 +1,9 @@
 import axios from "../../../api/axios"
-import { startLoading, fetchAll, fetchOne } from "./productSlice"
+import { startLoading, 
+    fetchAll, 
+    fetchOne,
+    addToCart
+} from "./productSlice"
 
 export const getProducts=()=>{
     return async dispatch => {
@@ -22,5 +26,12 @@ export const getProductById=(id)=>{
         const {data} = await axios.get(`products/${id}`);
         dispatch(fetchOne({product: data}))
 
+    }
+}
+
+export const addProductToCart=(product)=>{
+    return async dispatch => {
+        dispatch(startLoading())
+        dispatch(addToCart({product}))
     }
 }

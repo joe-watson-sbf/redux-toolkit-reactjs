@@ -7,6 +7,7 @@ export const productSlice = createSlice({
     hasError: false,
     product: null,
     products: [],
+    shoppingCart: []
   },
   reducers: {
     startLoading: (state) => {
@@ -17,17 +18,23 @@ export const productSlice = createSlice({
       state.hasError = false
       state.products = action.payload.products
     },
-    fetchOne: (state, action)=>{
-      
+    fetchOne: (state, action) => {
+
       state.isLoading = false
       state.hasError = false
       state.product = action.payload.product
+    },
+    addToCart: (state, action) => {
+      state.isLoading = false
+      state.hasError = false
+      state.shoppingCart.push(action.payload.product)
     }
-  },
+  }
 })
 
 export const {
   startLoading,
   fetchAll,
-  fetchOne
+  fetchOne,
+  addToCart
 } = productSlice.actions
